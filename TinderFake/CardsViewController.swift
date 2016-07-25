@@ -24,4 +24,13 @@ class CardsViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func onTap(sender: UITapGestureRecognizer) {
+        
+        // Register Nib
+        let profileView = ProfileViewController(nibName: "ProfileViewController", bundle: nil)
+        profileView.image = imageView.image!
+        // Present View "Modally"
+        presentViewController(profileView, animated: false, completion: nil)
+    }
 }
