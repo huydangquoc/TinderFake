@@ -42,11 +42,24 @@ class DraggableImageView: UIView {
     
     @IBAction func handlePan(recognizer: UIPanGestureRecognizer) {
         
-        let translation = recognizer.translationInView(contentView)
-        if let view = recognizer.view {
-            view.center = CGPoint(x:view.center.x + translation.x,
-                                  y:view.center.y)
+        switch recognizer.state {
+        case .Changed:
+            let reverseRotation = recognizer.locationInView(self).y > frame.height / 2
+            let translation = recognizer.translationInView(self)
+            var offset = translation.x
+            if translation.x > 150 {
+                offset = 360
+            } else if translation.x < -150 {
+                offset = -360
+            }
+            imageView.transform = CGAffineTransformMakeTranslation(offset, 0)
+            let angle = (translation.x / imageView.frame.width)
+            imageView.transform =
+                CGAffineTransformRotate(imageView.transform, reverseRotation ? -angle : angle)
+        case .Ended:
+            imageView.transform = CGAffineTransformIdentity
+        default:
+            break
         }
-        recognizer.setTranslation(CGPointZero, inView: contentView)
     }
 }
