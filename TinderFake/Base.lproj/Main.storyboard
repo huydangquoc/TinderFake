@@ -29,44 +29,37 @@
                                     <constraint firstAttribute="height" constant="108" id="0eI-QW-wOf"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ryan" translatesAutoresizingMaskIntoConstraints="NO" id="zUe-KJ-g4y">
-                                <rect key="frame" x="148" y="148" width="304" height="304"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eA6-Q3-8J1" customClass="DraggableImageView" customModule="TinderFake" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="600" height="428"/>
+                                <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="304" id="DGm-3m-UGk"/>
-                                    <constraint firstAttribute="height" constant="304" id="aLP-XR-hQM"/>
-                                </constraints>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="9lX-Yu-eoB" appends="YES" id="gb3-oU-iEF"/>
-                                </connections>
-                            </imageView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="9K3-01-VNY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Jvi-zT-r28"/>
-                            <constraint firstItem="9K3-01-VNY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SEC-lu-p6k"/>
-                            <constraint firstItem="zUe-KJ-g4y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bb0-9c-FY9"/>
-                            <constraint firstItem="V3H-Wy-cF0" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="dsk-Vr-DKC"/>
-                            <constraint firstItem="V3H-Wy-cF0" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="fm3-Ku-6f1"/>
-                            <constraint firstItem="zUe-KJ-g4y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lpO-21-X65"/>
-                            <constraint firstItem="V3H-Wy-cF0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pmK-Lb-q5K"/>
-                            <constraint firstItem="9K3-01-VNY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="xnJ-9M-3V1"/>
+                            <constraint firstItem="V3H-Wy-cF0" firstAttribute="top" secondItem="eA6-Q3-8J1" secondAttribute="bottom" id="2TQ-7A-qqW"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="V3H-Wy-cF0" secondAttribute="bottom" id="BzN-eh-uJU"/>
+                            <constraint firstItem="eA6-Q3-8J1" firstAttribute="top" secondItem="9K3-01-VNY" secondAttribute="bottom" id="IlC-Bi-Ho0"/>
+                            <constraint firstItem="9K3-01-VNY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TBd-TD-XRD"/>
+                            <constraint firstItem="9K3-01-VNY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Uli-XN-9Jf"/>
+                            <constraint firstItem="V3H-Wy-cF0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="W6X-6u-4Qo"/>
+                            <constraint firstItem="eA6-Q3-8J1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Yax-N3-MNr"/>
+                            <constraint firstAttribute="trailing" secondItem="V3H-Wy-cF0" secondAttribute="trailing" id="cel-kX-uT0"/>
+                            <constraint firstAttribute="trailing" secondItem="eA6-Q3-8J1" secondAttribute="trailing" id="iSM-3v-GvP"/>
+                            <constraint firstAttribute="trailing" secondItem="9K3-01-VNY" secondAttribute="trailing" id="ydO-IP-Rm2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="eA6-Q3-8J1" id="CQP-LJ-yFH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="9lX-Yu-eoB">
-                    <connections>
-                        <action selector="handlePan:" destination="BYZ-38-t0r" id="ViF-kD-TnL"/>
-                    </connections>
-                </panGestureRecognizer>
             </objects>
         </scene>
     </scenes>
     <resources>
         <image name="action_buttons" width="320" height="108"/>
         <image name="nav_bar" width="320" height="65"/>
-        <image name="ryan" width="449" height="514"/>
     </resources>
 </document>
