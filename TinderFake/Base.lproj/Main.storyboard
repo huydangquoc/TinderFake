@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Cards View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="CardsViewController" customModule="TinderFake" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,57 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nav_bar" translatesAutoresizingMaskIntoConstraints="NO" id="9K3-01-VNY">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="oHt-F3-TW6"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="action_buttons" translatesAutoresizingMaskIntoConstraints="NO" id="V3H-Wy-cF0">
+                                <rect key="frame" x="0.0" y="492" width="600" height="108"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="108" id="0eI-QW-wOf"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ryan" translatesAutoresizingMaskIntoConstraints="NO" id="zUe-KJ-g4y">
+                                <rect key="frame" x="148" y="148" width="304" height="304"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="304" id="DGm-3m-UGk"/>
+                                    <constraint firstAttribute="height" constant="304" id="aLP-XR-hQM"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="9lX-Yu-eoB" appends="YES" id="gb3-oU-iEF"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="9K3-01-VNY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Jvi-zT-r28"/>
+                            <constraint firstItem="9K3-01-VNY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="SEC-lu-p6k"/>
+                            <constraint firstItem="zUe-KJ-g4y" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bb0-9c-FY9"/>
+                            <constraint firstItem="V3H-Wy-cF0" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="dsk-Vr-DKC"/>
+                            <constraint firstItem="V3H-Wy-cF0" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="fm3-Ku-6f1"/>
+                            <constraint firstItem="zUe-KJ-g4y" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="lpO-21-X65"/>
+                            <constraint firstItem="V3H-Wy-cF0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pmK-Lb-q5K"/>
+                            <constraint firstItem="9K3-01-VNY" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailing" id="xnJ-9M-3V1"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="9lX-Yu-eoB">
+                    <connections>
+                        <action selector="handlePan:" destination="BYZ-38-t0r" id="ViF-kD-TnL"/>
+                    </connections>
+                </panGestureRecognizer>
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="action_buttons" width="320" height="108"/>
+        <image name="nav_bar" width="320" height="65"/>
+        <image name="ryan" width="449" height="514"/>
+    </resources>
 </document>
